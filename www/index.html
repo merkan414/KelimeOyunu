@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="kelimeOyunuApp">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+
+        <link href="css/index.css" rel="stylesheet" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+    </head>
+    <body>
+        <div ng-view></div>
+    </body>
+<script>
+    var app = angular.module('kelimeOyunuApp', [ 'ngRoute' ]);
+    app.config(['$routeProvider', function ($routeProvider) {
+        $routeProvider.
+                when("/", {templateUrl: "partials/main.html"}).
+                otherwise({redirectTo:'/'});
+    }]);
+</script>
+</html>
